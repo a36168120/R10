@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-
 import {
   SafeAreaView,
   StyleSheet,
@@ -8,11 +7,13 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import RootStackNavigator from './navigation/RootStackNavigator';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <SafeAreaView>
+        <RootStackNavigator />
         <Text>This is R10</Text>
       </SafeAreaView>
     );
