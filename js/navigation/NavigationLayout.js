@@ -11,7 +11,9 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const AboutStack = createStackNavigator(
   {
-    About: AboutScreen,
+    About: {
+      screen: AboutScreen,
+    },
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
@@ -20,39 +22,52 @@ const AboutStack = createStackNavigator(
   },
 );
 
-const MapStack = createStackNavigator({
-  About: {
-    screen: MapScreen,
+const MapStack = createStackNavigator(
+  {
+    About: {
+      screen: MapScreen,
+    },
   },
-});
-
-const FavesStack = createStackNavigator({
-  About: {
-    screen: FavesScreen,
+  {
+    defaultNavigationOptions: ({navigation}) => ({
+      ...sharedNavigationOptions(navigation),
+    }),
   },
+);
 
-  Session: {
-    screen: SessionScreen,
+const FavesStack = createStackNavigator(
+  {
+    About: {
+      screen: FavesScreen,
+    },
+
+    Session: {
+      screen: SessionScreen,
+    },
   },
-
-  // Speaker: {
-  //   screen: SpeakerScreen,
-  // },
-});
-
-const ScheduleStack = createStackNavigator({
-  Schedule: {
-    screen: ScheduleScreen,
+  {
+    defaultNavigationOptions: ({navigation}) => ({
+      ...sharedNavigationOptions(navigation),
+    }),
   },
+);
 
-  Session: {
-    screen: SessionScreen,
+const ScheduleStack = createStackNavigator(
+  {
+    Schedule: {
+      screen: ScheduleScreen,
+    },
+
+    Session: {
+      screen: SessionScreen,
+    },
   },
-
-  // Speaker: {
-  //   screen: SpeakerScreen,
-  // },
-});
+  {
+    defaultNavigationOptions: ({navigation}) => ({
+      ...sharedNavigationOptions(navigation),
+    }),
+  },
+);
 
 export default createBottomTabNavigator(
   {
