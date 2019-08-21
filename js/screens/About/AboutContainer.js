@@ -17,7 +17,6 @@ const GET_CONDUCT = gql`
 class AboutContainer extends Component {
   render() {
     return (
-      // <Text>
       <Query query={GET_CONDUCT}>
         {({loading, error, data}) => {
           if (loading) return <Text>Loading...</Text>;
@@ -25,7 +24,6 @@ class AboutContainer extends Component {
           return <About conduct={data} />;
         }}
       </Query>
-      // </Text>
     );
   }
 }
