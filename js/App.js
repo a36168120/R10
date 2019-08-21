@@ -1,21 +1,18 @@
 import React, {Component} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
 import RootStackNavigator from './navigation/RootStackNavigator';
+import {ApolloProvider} from 'react-apollo';
+import client from './config/api';
+// import AboutContainer from './screens/About';
 
 class App extends React.Component {
   render() {
     return (
-      <SafeAreaView>
+      <ApolloProvider client={client}>
         <RootStackNavigator />
-        <Text>This is R10</Text>
-      </SafeAreaView>
+
+        {/* <AboutContainer /> */}
+      </ApolloProvider>
     );
   }
 }
