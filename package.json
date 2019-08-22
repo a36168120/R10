@@ -1,16 +1,18 @@
 {
-  "name": "R10",
+  "name": "r10",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "emulator": "cd ~/Library/Android/sdk/tools && ./emulator -avd Pixel_XL_API_28_2"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.0.1",
     "apollo-boost": "^0.4.4",
     "graphql": "^14.4.2",
+    "moment": "^2.24.0",
     "react": "16.8.6",
     "react-apollo": "^3.0.1",
     "react-native": "0.60.5",

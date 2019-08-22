@@ -15,6 +15,10 @@ const GET_CONDUCT = gql`
 `;
 
 class AboutContainer extends Component {
+  static navigationOptions = {
+    title: 'About',
+  };
+
   render() {
     return (
       <Query query={GET_CONDUCT}>
