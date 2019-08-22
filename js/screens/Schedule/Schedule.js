@@ -5,7 +5,7 @@ import ListSection from '../../componets/ListSection';
 
 const Schedule = ({session, navigation}) => {
   return (
-    <View style={styles.title}>
+    <View style={styles.container}>
       <ListSection session={session} navigation={navigation} />
     </View>
   );

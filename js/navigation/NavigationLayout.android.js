@@ -94,19 +94,19 @@ export default createDrawerNavigator(
       },
     }),
   },
-  {
-    tabBarOptions: {
-      activeTintColor: '#FFFFFF',
-      inactiveTintColor: '#808080',
+  // {
+  //   tabBarOptions: {
+  //     activeTintColor: '#FFFFFF',
+  //     inactiveTintColor: '#808080',
 
-      labelStyle: {
-        fontSize: 12,
-        fontFamily: 'Montserrat-Regular',
-      },
+  //     labelStyle: {
+  //       fontSize: 20,
+  //       fontFamily: 'Montserrat-Regular',
+  //     },
 
-      style: {
-        backgroundColor: 'blue',
-      },
-    },
-  },
+  //     style: {
+  //       backgroundColor: 'blue',
+  //     },
+  //   },
+  // },
 );
