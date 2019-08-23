@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
+import FavesContext from '../../context/FavesContext';
 
 class FavesContainer extends Component {
   static navigationOptions = {
@@ -8,9 +9,13 @@ class FavesContainer extends Component {
 
   render() {
     return (
-      <View>
-        <Text> FavesContainer </Text>
-      </View>
+      <FavesContext.Consumer>
+        {value => (
+          <View>
+            <Text> FavesContainer </Text>
+          </View>
+        )}
+      </FavesContext.Consumer>
     );
   }
 }

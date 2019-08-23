@@ -3,6 +3,7 @@ import {View, Text} from 'react-native';
 import Schedule from './Schedule';
 import {Query} from 'react-apollo';
 import {gql} from 'apollo-boost';
+import FavesContext from '../../context/FavesContext';
 // import console = require('console');
 
 const GET_SESSION = gql`
@@ -37,10 +38,14 @@ class ScheduleContainer extends Component {
           if (error) return <Text>Error!</Text>;
           // console.log(data.allSessions);
           return (
-            <Schedule
-              session={data.allSessions}
-              navigation={this.props.navigation}
-            />
+            <FavesContext.Consumer>
+              {value => (
+                <Schedule
+                  session={data.allSessions}
+                  navigation={this.props.navigation}
+                />
+              )}
+            </FavesContext.Consumer>
           );
         }}
       </Query>
