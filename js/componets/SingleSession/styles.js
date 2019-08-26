@@ -43,6 +43,18 @@ const styles = StyleSheet.create({
       },
     }),
   },
+
+  wrapper: {
+    flex: 1,
+    paddingRight: 12,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  heart: {
+    color: 'red',
+  },
 });
 
 export default styles;

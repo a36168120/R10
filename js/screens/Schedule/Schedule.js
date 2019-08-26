@@ -3,10 +3,14 @@ import {View, Text, SectionList, TouchableHighlight} from 'react-native';
 import styles from './styles';
 import ListSection from '../../componets/ListSection';
 
-const Schedule = ({session, navigation}) => {
+const Schedule = ({session, faveIds}) => {
   return (
     <View style={styles.container}>
-      <ListSection session={session} navigation={navigation} />
+      <ListSection
+        session={session}
+        // navigation={navigation}
+        faveIds={faveIds}
+      />
     </View>
   );
 };

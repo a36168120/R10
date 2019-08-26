@@ -37,10 +37,11 @@ class ScheduleContainer extends Component {
           if (error) return <Text>Error!</Text>;
           return (
             <FavesContext.Consumer>
-              {() => (
+              {({faveIds}) => (
                 <Schedule
                   session={data.allSessions}
-                  navigation={this.props.navigation}
+                  // navigation={this.props.navigation}
+                  faveIds={faveIds}
                 />
               )}
             </FavesContext.Consumer>

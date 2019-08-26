@@ -1,11 +1,12 @@
 import React from 'react';
 import {View, Text, SectionList, TouchableHighlight} from 'react-native';
+import {withNavigation} from 'react-navigation';
 import moment from 'moment';
 import SingleSession from '../../componets/SingleSession';
 import {formatSessionData} from '../../lib/helper';
 import styles from './styles';
 
-const ListSection = ({session, navigation}) => {
+const ListSection = ({session, navigation, faveIds}) => {
   const newData = formatSessionData(session);
   return (
     <View>
@@ -16,7 +17,7 @@ const ListSection = ({session, navigation}) => {
               navigation.navigate('Session', {item});
             }}
             underlayColor="#ECD8D9">
-            <SingleSession item={item} />
+            <SingleSession item={item} faveIds={faveIds} />
           </TouchableHighlight>
         )}
         renderSectionHeader={({section: {title}}) => (
@@ -29,4 +30,4 @@ const ListSection = ({session, navigation}) => {
   );
 };
 
-export default ListSection;
+export default withNavigation(ListSection);
