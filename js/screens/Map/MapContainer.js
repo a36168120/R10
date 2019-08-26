@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
+import Map from './Map';
 
 class MapContainer extends Component {
   static navigationOptions = {
@@ -7,11 +8,7 @@ class MapContainer extends Component {
   };
 
   render() {
-    return (
-      <View>
-        <Text> Map Feature is coming in Patch v1.0.7 </Text>
-      </View>
-    );
+    return <Map />;
   }
 }
 
