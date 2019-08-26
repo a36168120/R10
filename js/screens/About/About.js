@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, ScrollView, Image, Text, Platform} from 'react-native';
 import styles from './styles';
+import Conducts from '../../componets/Conducts';
 
 const About = ({conduct}) => {
   return (
@@ -11,11 +12,6 @@ const About = ({conduct}) => {
           source={require('../../assets/images/r10_logo.png')}
         />
         <View style={styles.line} />
-        {/* {Platform.OS === 'ios' ? (
-          <Text style={styles.ios}>This iPhone</Text>
-        ) : (
-          <Text style={styles.android}>This is Android</Text>
-        )} */}
 
         <Text style={styles.text}>
           R10 is a conference that focuses on just about any topic related to
@@ -32,10 +28,7 @@ const About = ({conduct}) => {
         <Text style={styles.header}>Code of Conduct</Text>
 
         {conduct.allConducts.map(conduct => (
-          <View key={conduct.id}>
-            <Text style={styles.title}>+ {conduct.title}</Text>
-            {/* <Text>{conduct.description}</Text> */}
-          </View>
+          <Conducts key={conduct.id} conduct={conduct} />
         ))}
 
         {Platform.OS === 'ios' && (

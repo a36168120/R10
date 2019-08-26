@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     ...Platform.select({
       android: {
         fontFamily: fontMain,
-        color: '#909090',
+        color: '#686868',
       },
       ios: {
         fontFamily: fontMain,
@@ -49,14 +49,6 @@ const styles = StyleSheet.create({
         color: 'black',
       },
     }),
-  },
-
-  title: {
-    fontSize: 16,
-    paddingTop: 20,
-    paddingBottom: 20,
-    color: '#9963ea',
-    fontFamily: 'Montserrat-Regular',
   },
 });
 
