@@ -8,10 +8,10 @@ class FavesProvider extends Component {
       faveIds: [],
     };
   }
-
+  1;
   addFaveSession = async sessionId => {
     try {
-      const addFaves = await createFave(sessionId);
+      const newFave = await createFave(sessionId);
       this.setState({faveIds: [...this.state.faveIds, newFave]});
     } catch (e) {
       throw e;
@@ -20,7 +20,7 @@ class FavesProvider extends Component {
 
   removeFaveSession = async sessionId => {
     try {
-      const removeFave = await deleteFave(sessionId);
+      await deleteFave(sessionId);
       this.getFavedSessionIds();
     } catch (e) {
       throw e;
@@ -28,9 +28,13 @@ class FavesProvider extends Component {
   };
 
   getFavedSessionIds = async () => {
-    const savedFaves = await queryFaves();
-    const faveIds = savedFaves.map(fave => fave[0]);
-    this.setState({faveIds});
+    try {
+      const savedFaves = await queryFaves();
+      const faveIds = savedFaves.map(fave => fave[0]);
+      this.setState({faveIds});
+    } catch (e) {
+      throw e;
+    }
   };
 
   componentDidMount() {
@@ -40,9 +44,11 @@ class FavesProvider extends Component {
   render() {
     return (
       <FavesContext.Provider
-        addFaveSession={this.addFaveSession}
-        removeFaveSession={this.removeFaveSession}
-        value={{...this.state}}>
+        value={{
+          ...this.state,
+          addFaveSession: this.addFaveSession,
+          removeFaveSession: this.removeFaveSession,
+        }}>
         {this.props.children}
       </FavesContext.Provider>
     );
