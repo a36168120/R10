@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Button,
+  Linking,
+} from 'react-native';
 import styles from './styles';
 import {SafeAreaView} from 'react-navigation';
 import {withNavigation} from 'react-navigation';
@@ -24,6 +31,13 @@ const Speaker = ({item, navigation}) => {
         <Text style={styles.name}>{item.name}</Text>
         <Text style={styles.bio}>{item.bio}</Text>
       </View>
+
+      <Button
+        title="Read More on Wikipedia"
+        onPress={() =>
+          Linking.openURL(item.url).catch(err => console.log('gsgsdgsg', err))
+        }
+      />
     </SafeAreaView>
   );
 };
