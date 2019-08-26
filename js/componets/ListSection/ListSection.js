@@ -1,8 +1,9 @@
 import React from 'react';
 import {View, Text, SectionList, TouchableHighlight} from 'react-native';
-import styles from './styles';
 import moment from 'moment';
 import SingleSession from '../../componets/SingleSession';
+import {formatSessionData} from '../../lib/helper';
+import styles from './styles';
 
 const ListSection = ({session, navigation}) => {
   const newData = formatSessionData(session);
@@ -26,18 +27,6 @@ const ListSection = ({session, navigation}) => {
       />
     </View>
   );
-};
-
-export const formatSessionData = sessions => {
-  return sessions
-    .reduce((acc, curr) => {
-      const timeExists = acc.find(section => section.title === curr.startTime);
-      timeExists
-        ? timeExists.data.push(curr)
-        : acc.push({title: curr.startTime, data: [curr]});
-      return acc;
-    }, [])
-    .sort((a, b) => a.title - b.title);
 };
 
 export default ListSection;

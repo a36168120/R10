@@ -9,7 +9,7 @@ class MapContainer extends Component {
   render() {
     return (
       <View>
-        <Text> MapContainer </Text>
+        <Text> Map Feature is coming in Patch v1.0.7 </Text>
       </View>
     );
   }

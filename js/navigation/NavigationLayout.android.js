@@ -77,7 +77,7 @@ export default createDrawerNavigator(
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
-      tabBarIcon: ({focused, horizontal, tintColor}) => {
+      drawerIcon: ({focused, horizontal, tintColor}) => {
         const {routeName} = navigation.state;
         let IconComponent = Ionicons;
         let iconName;
@@ -88,25 +88,25 @@ export default createDrawerNavigator(
         } else if (routeName === 'Faves') {
           iconName = `md-heart`;
         } else if (routeName === 'About') {
-          iconName = `md-information-circle-outline`;
+          iconName = `md-information-circle`;
         }
         return <IconComponent name={iconName} size={25} color={tintColor} />;
       },
     }),
   },
-  // {
-  //   tabBarOptions: {
-  //     activeTintColor: '#FFFFFF',
-  //     inactiveTintColor: '#808080',
+  {
+    tabBarOptions: {
+      activeTintColor: '#FFFFFF',
+      inactiveTintColor: '#808080',
 
-  //     labelStyle: {
-  //       fontSize: 20,
-  //       fontFamily: 'Montserrat-Regular',
-  //     },
+      labelStyle: {
+        fontSize: 20,
+        fontFamily: 'Montserrat-Regular',
+      },
 
-  //     style: {
-  //       backgroundColor: 'blue',
-  //     },
-  //   },
-  // },
+      style: {
+        backgroundColor: 'blue',
+      },
+    },
+  },
 );

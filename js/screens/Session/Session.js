@@ -34,14 +34,14 @@ const Session = ({
       {!faveIds.includes(item.id) ? (
         <Button
           style={styles.button}
-          onPress={() => addFaveSession(item.id, addFaveSession)}
+          onPress={() => addFaveSession(item.id)}
           title="Add to Faves"
           color="#9963ea"
         />
       ) : (
         <Button
           style={styles.button}
-          onPress={() => removeFaveSession(item.id, removeFaveSession)}
+          onPress={() => removeFaveSession(item.id)}
           title="Remove to Faves"
           color="#9963ea"
         />

@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     ...Platform.select({
       android: {
         fontFamily: fontMain,
-        color: '#909090',
+        color: '#686868',
       },
 
       ios: {

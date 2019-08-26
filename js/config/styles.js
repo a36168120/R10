@@ -11,3 +11,12 @@ export const typography = {
     },
   }),
 };
+
+export const theme = {
+  pallete: {
+    title: '#686868',
+    text: '#A9A9A9',
+    location: '#A9A9A9',
+    time: '#686868',
+  },
+};
