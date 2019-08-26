@@ -3,7 +3,6 @@ import {View, Text} from 'react-native';
 import Session from './Session';
 import styles from './styles';
 import FavesContext from '../../context/FavesContext';
-// import console = require('console');
 
 class SessionContainer extends Component {
   static navigationOptions = {
@@ -15,9 +14,15 @@ class SessionContainer extends Component {
     const item = navigation.getParam('item');
     return (
       <FavesContext.Consumer>
-        {value => (
+        {({faveIds, addFaveSession, removeFaveSession}) => (
           <View style={styles.container}>
-            <Session item={item} navigation={navigation} />
+            <Session
+              item={item}
+              navigation={navigation}
+              faveIds={faveIds}
+              addFaveSession={addFaveSession}
+              removeFaveSession={removeFaveSession}
+            />
           </View>
         )}
       </FavesContext.Consumer>
