@@ -1,5 +1,13 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity, Button} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  Button,
+  ScrollView,
+} from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 import moment from 'moment';
 
@@ -11,8 +19,13 @@ const Session = ({
   removeFaveSession,
 }) => {
   return (
-    <View>
+    <ScrollView>
       <Text style={styles.location}>{item.location}</Text>
+
+      {faveIds.includes(item.id) ? (
+        <Ionicons style={styles.heart} name="ios-heart" size={12} />
+      ) : null}
+
       <Text style={styles.title}>{item.title}</Text>
       <Text style={styles.time}>{moment(item.startTime).format('LT')}</Text>
       <Text style={styles.description}>{item.description}</Text>
@@ -46,7 +59,7 @@ const Session = ({
           color="#9963ea"
         />
       )}
-    </View>
+    </ScrollView>
   );
 };
 
