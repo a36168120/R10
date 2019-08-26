@@ -23,7 +23,6 @@ class SessionContainer extends Component {
               addFaveSession={addFaveSession}
               removeFaveSession={removeFaveSession}
             />
-            {console.log(item)}
           </View>
         )}
       </FavesContext.Consumer>

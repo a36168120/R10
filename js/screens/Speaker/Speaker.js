@@ -34,9 +34,7 @@ const Speaker = ({item, navigation}) => {
 
       <Button
         title="Read More on Wikipedia"
-        onPress={() =>
-          Linking.openURL(item.url).catch(err => console.log('gsgsdgsg', err))
-        }
+        onPress={() => Linking.openURL(item.url).catch(error => error)}
       />
     </SafeAreaView>
   );

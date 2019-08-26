@@ -6,11 +6,7 @@ import ListSection from '../../componets/ListSection';
 const Schedule = ({session, faveIds}) => {
   return (
     <View style={styles.container}>
-      <ListSection
-        session={session}
-        // navigation={navigation}
-        faveIds={faveIds}
-      />
+      <ListSection session={session} faveIds={faveIds} />
     </View>
   );
 };

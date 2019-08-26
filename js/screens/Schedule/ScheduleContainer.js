@@ -38,11 +38,7 @@ class ScheduleContainer extends Component {
           return (
             <FavesContext.Consumer>
               {({faveIds}) => (
-                <Schedule
-                  session={data.allSessions}
-                  // navigation={this.props.navigation}
-                  faveIds={faveIds}
-                />
+                <Schedule session={data.allSessions} faveIds={faveIds} />
               )}
             </FavesContext.Consumer>
           );
