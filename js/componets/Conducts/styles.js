@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
       ios: {
         fontFamily: fontMain,
         color: 'black',
-        fontSize: 50,
+        fontSize: 16,
       },
     }),
   },

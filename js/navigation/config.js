@@ -28,6 +28,7 @@ const MenuButton = ({navigation}) => (
 
 export const sharedNavigationOptions = navigation => ({
   headerBackTitle: null,
+
   header: props => <GradientHeader {...props} />,
 
   headerStyle: {
@@ -37,6 +38,8 @@ export const sharedNavigationOptions = navigation => ({
   ...Platform.select({
     android: {headerLeft: <MenuButton navigation={navigation} />},
   }),
+
+  headerTintColor: '#fff',
 
   headerTitleStyle: {
     color: 'white',
