@@ -88,13 +88,11 @@ export default createBottomTabNavigator(
         } else if (routeName === 'Faves') {
           iconName = `ios-heart`;
         } else if (routeName === 'About') {
-          iconName = `ios-information-circle-outline`;
+          iconName = `ios-information-circle`;
         }
         return <IconComponent name={iconName} size={25} color={tintColor} />;
       },
     }),
-  },
-  {
     tabBarOptions: {
       activeTintColor: '#FFFFFF',
       inactiveTintColor: '#808080',
@@ -105,7 +103,7 @@ export default createBottomTabNavigator(
       },
 
       style: {
-        backgroundColor: 'blue',
+        backgroundColor: 'black',
       },
     },
   },

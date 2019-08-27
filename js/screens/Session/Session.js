@@ -4,10 +4,11 @@ import {
   Text,
   Image,
   TouchableOpacity,
-  Button,
   ScrollView,
+  StyleSheet,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
 import moment from 'moment';
 
@@ -20,11 +21,13 @@ const Session = ({
 }) => {
   return (
     <ScrollView>
-      <Text style={styles.location}>{item.location}</Text>
+      <View style={styles.headerWrapper}>
+        <Text style={styles.location}>{item.location}</Text>
 
-      {faveIds.includes(item.id) ? (
-        <Ionicons style={styles.heart} name="ios-heart" size={12} />
-      ) : null}
+        {faveIds.includes(item.id) ? (
+          <Ionicons style={styles.heart} name="ios-heart" size={18} />
+        ) : null}
+      </View>
 
       <Text style={styles.title}>{item.title}</Text>
       <Text style={styles.time}>{moment(item.startTime).format('LT')}</Text>
@@ -45,19 +48,37 @@ const Session = ({
       <View style={styles.line} />
 
       {!faveIds.includes(item.id) ? (
-        <Button
-          style={styles.button}
-          onPress={() => addFaveSession(item.id)}
-          title="Add to Faves"
-          color="#9963ea"
-        />
+        <View style={styles.bigWrapper}>
+          <View style={styles.btnWrapper}>
+            <LinearGradient
+              colors={['#9963ea', '#8797D6']}
+              start={{x: 0.0, y: 1.0}}
+              end={{x: 1.0, y: 0.0}}
+              style={[StyleSheet.absoluteFill]}
+            />
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => addFaveSession(item.id)}>
+              <Text style={styles.btnTxt}>Add to Faves</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       ) : (
-        <Button
-          style={styles.button}
-          onPress={() => removeFaveSession(item.id)}
-          title="Remove to Faves"
-          color="#9963ea"
-        />
+        <View style={styles.bigWrapper}>
+          <View style={styles.btnWrapper}>
+            <LinearGradient
+              colors={['#9963ea', '#8797D6']}
+              start={{x: 0.0, y: 1.0}}
+              end={{x: 1.0, y: 0.0}}
+              style={[StyleSheet.absoluteFill]}
+            />
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => removeFaveSession(item.id)}>
+              <Text style={styles.btnTxt}>Remove to Faves</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       )}
     </ScrollView>
   );

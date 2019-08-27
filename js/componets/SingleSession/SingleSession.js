@@ -10,7 +10,7 @@ const SingleSession = ({item, faveIds}) => {
       <View style={styles.wrapper}>
         <Text style={styles.location}>{item.location}</Text>
         {faveIds.includes(item.id) ? (
-          <Ionicons style={styles.heart} name="ios-heart" size={12} />
+          <Ionicons style={styles.heart} name="ios-heart" size={18} />
         ) : null}
       </View>
     </View>

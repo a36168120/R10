@@ -4,9 +4,10 @@ import {
   Text,
   Image,
   TouchableOpacity,
-  Button,
   Linking,
+  StyleSheet,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
 import {SafeAreaView} from 'react-navigation';
 import {withNavigation} from 'react-navigation';
@@ -30,12 +31,22 @@ const Speaker = ({item, navigation}) => {
         <Image style={styles.image} source={{uri: item.image}} />
         <Text style={styles.name}>{item.name}</Text>
         <Text style={styles.bio}>{item.bio}</Text>
+        <View style={styles.bigWrapper}>
+          <View style={styles.btnWrapper}>
+            <LinearGradient
+              colors={['#9963ea', '#8797D6']}
+              start={{x: 0.0, y: 1.0}}
+              end={{x: 1.0, y: 0.0}}
+              style={[StyleSheet.absoluteFill]}
+            />
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => Linking.openURL(item.url).catch(error => error)}>
+              <Text style={styles.btnTxt}>Read More on Wikipedia</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
       </View>
-
-      <Button
-        title="Read More on Wikipedia"
-        onPress={() => Linking.openURL(item.url).catch(error => error)}
-      />
     </SafeAreaView>
   );
 };

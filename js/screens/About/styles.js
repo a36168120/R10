@@ -22,15 +22,16 @@ const styles = StyleSheet.create({
   },
 
   header: {
-    fontSize: 30,
     ...Platform.select({
       android: {
         fontFamily: fontMain,
         color: '#686868',
+        fontSize: 26,
       },
       ios: {
         fontFamily: fontMain,
         color: 'black',
+        fontSize: 30,
       },
     }),
   },
@@ -41,12 +42,13 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     ...Platform.select({
       android: {
-        fontFamily: fontMain,
+        fontFamily: fontMainLight,
         color: '#A9A9A9',
       },
       ios: {
-        fontFamily: fontMain,
+        fontFamily: fontMainLight,
         color: 'black',
+        lineHeight: 25,
       },
     }),
   },

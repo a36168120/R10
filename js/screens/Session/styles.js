@@ -6,10 +6,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 16,
+    paddingVertical: 16,
+  },
+
+  headerWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 
   location: {
-    paddingVertical: 12,
     ...Platform.select({
       android: {
         fontFamily: fontMain,
@@ -20,13 +26,17 @@ const styles = StyleSheet.create({
       ios: {
         fontFamily: fontMain,
         color: '#A9A9A9',
-        fontSize: 22,
+        fontSize: 20,
       },
     }),
   },
 
+  heart: {
+    color: '#cf392a',
+  },
+
   title: {
-    paddingVertical: 6,
+    paddingVertical: 12,
     ...Platform.select({
       android: {
         fontFamily: fontMain,
@@ -44,6 +54,7 @@ const styles = StyleSheet.create({
 
   time: {
     fontFamily: fontMainLight,
+    fontWeight: 'bold',
     color: '#cf392a',
     ...Platform.select({
       android: {
@@ -53,7 +64,6 @@ const styles = StyleSheet.create({
 
       ios: {
         fontSize: 20,
-        fontWeight: 'bold',
         paddingVertical: 12,
       },
     }),
@@ -123,6 +133,7 @@ const styles = StyleSheet.create({
       android: {
         fontFamily: fontMain,
         fontSize: 16,
+        color: '#808080',
       },
 
       ios: {
@@ -139,10 +150,39 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
 
+  bigWrapper: {
+    flex: 1,
+    paddingTop: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  btnWrapper: {
+    height: 60,
+    width: 220,
+    borderRadius: 50,
+    overflow: 'hidden',
+  },
+
   button: {
-    width: 100,
-    height: 100,
-    backgroundColor: '#9963ea',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  btnTxt: {
+    color: 'white',
+    ...Platform.select({
+      android: {
+        fontFamily: fontMain,
+        fontSize: 16,
+      },
+
+      ios: {
+        fontFamily: fontMain,
+        fontSize: 20,
+      },
+    }),
   },
 });
 

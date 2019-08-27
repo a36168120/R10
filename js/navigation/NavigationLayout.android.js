@@ -93,9 +93,7 @@ export default createDrawerNavigator(
         return <IconComponent name={iconName} size={25} color={tintColor} />;
       },
     }),
-  },
-  {
-    tabBarOptions: {
+    contentOptions: {
       activeTintColor: '#FFFFFF',
       inactiveTintColor: '#808080',
 

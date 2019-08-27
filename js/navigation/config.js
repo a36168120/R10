@@ -29,10 +29,22 @@ const MenuButton = ({navigation}) => (
 export const sharedNavigationOptions = navigation => ({
   headerBackTitle: null,
   header: props => <GradientHeader {...props} />,
+
   headerStyle: {
     backgroundColor: 'transparent',
   },
+
   ...Platform.select({
     android: {headerLeft: <MenuButton navigation={navigation} />},
   }),
+
+  headerTitleStyle: {
+    color: 'white',
+    fontSize: 20,
+    ...Platform.select({
+      android: {
+        fontWeight: 'bold',
+      },
+    }),
+  },
 });

@@ -3,12 +3,16 @@ import {typography} from '../../config/styles';
 const {fontMain, fontMainLight} = typography;
 
 const styles = StyleSheet.create({
-  time: {
-    fontSize: 16,
-    alignItems: 'center',
-    height: 25,
+  timeWrapper: {
+    flex: 1,
+    justifyContent: 'center',
+    height: 30,
     paddingLeft: 12,
     backgroundColor: '#e6e6e6',
+  },
+
+  time: {
+    fontSize: 16,
     ...Platform.select({
       android: {
         fontFamily: fontMain,

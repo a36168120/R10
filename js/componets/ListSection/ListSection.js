@@ -11,7 +11,7 @@ const ListSection = ({session, navigation, faveIds}) => {
   return (
     <View>
       <SectionList
-        renderItem={({item, index, section}) => (
+        renderItem={({item}) => (
           <TouchableHighlight
             onPress={() => {
               navigation.navigate('Session', {item});
@@ -21,7 +21,9 @@ const ListSection = ({session, navigation, faveIds}) => {
           </TouchableHighlight>
         )}
         renderSectionHeader={({section: {title}}) => (
-          <Text style={styles.time}>{moment(title).format('LT')}</Text>
+          <View style={styles.timeWrapper}>
+            <Text style={styles.time}>{moment(title).format('LT')}</Text>
+          </View>
         )}
         sections={newData}
         keyExtractor={(item, index) => item + index}

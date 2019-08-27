@@ -55,6 +55,11 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     fontFamily: fontMain,
     fontSize: 26,
+    ...Platform.select({
+      android: {
+        color: '#808080',
+      },
+    }),
   },
 
   bio: {
@@ -62,6 +67,41 @@ const styles = StyleSheet.create({
     fontFamily: fontMainLight,
     fontSize: 18,
     lineHeight: 25,
+  },
+
+  bigWrapper: {
+    flex: 1,
+    paddingTop: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  btnWrapper: {
+    height: 60,
+    width: 300,
+    borderRadius: 50,
+    overflow: 'hidden',
+  },
+
+  button: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  btnTxt: {
+    color: 'white',
+    ...Platform.select({
+      android: {
+        fontFamily: fontMain,
+        fontSize: 16,
+      },
+
+      ios: {
+        fontFamily: fontMain,
+        fontSize: 20,
+      },
+    }),
   },
 });
 

@@ -36,10 +36,14 @@ class Conducts extends Component {
             {this.state.open ? (
               <View style={styles.wrapper}>
                 <Animated.Text
+                  style={styles.expend}
                   style={{
-                    fontSize: 16,
-                    width: 20,
-                    height: 20,
+                    fontSize: 20,
+                    width: 30,
+                    height: 30,
+                    color: '#9963ea',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     transform: [{rotate: spin}],
                   }}>
                   -
@@ -49,10 +53,14 @@ class Conducts extends Component {
             ) : (
               <View style={styles.wrapper}>
                 <Animated.Text
+                  style={styles.expend}
                   style={{
-                    fontSize: 16,
-                    width: 20,
-                    height: 20,
+                    fontSize: 20,
+                    width: 30,
+                    height: 30,
+                    color: '#9963ea',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     transform: [{rotate: spin}],
                   }}>
                   +

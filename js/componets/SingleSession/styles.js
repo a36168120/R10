@@ -4,42 +4,43 @@ const {fontMain, fontMainLight} = typography;
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     width: '100%',
     borderBottomColor: '#e6e6e6',
     borderBottomWidth: 1,
+    paddingVertical: 20,
   },
 
   title: {
-    fontSize: 18,
     paddingLeft: 12,
-    paddingTop: 12,
     ...Platform.select({
       android: {
         fontFamily: fontMain,
         color: '#686868',
+        fontSize: 18,
       },
 
       ios: {
         fontFamily: fontMain,
         color: 'black',
+        fontSize: 20,
       },
     }),
   },
 
   location: {
-    fontSize: 14,
     paddingLeft: 12,
-    paddingTop: 5,
-    paddingBottom: 12,
+    paddingTop: 8,
+    color: '#A9A9A9',
     ...Platform.select({
       android: {
         fontFamily: fontMain,
-        color: '#A9A9A9',
+        fontSize: 14,
       },
 
       ios: {
         fontFamily: fontMain,
-        color: 'black',
+        fontSize: 16,
       },
     }),
   },
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
   },
 
   heart: {
-    color: 'red',
+    color: '#cf392a',
   },
 });
 
