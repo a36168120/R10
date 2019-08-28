@@ -23,12 +23,14 @@ This project was created with React-Native, that performs on muti-platform such 
 
 1. Type this into your terminal
 
-   yarn install
+   `yarn install`
 
 2. To run the emulators
 
    If you are using IOS emulator, use this
+   
    `react-native run-ios`
 
    If you are using Android emulator, use this
+   
    `react-native run-android`
