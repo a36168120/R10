@@ -31,7 +31,7 @@ class FavesContainer extends Component {
   render() {
     return (
       <FavesContext.Consumer>
-        {({faveIds, removeFaveSession}) => (
+        {({faveIds}) => (
           <Query query={GET_SESSION_ITEMS}>
             {({loading, error, data}) => {
               if (loading) return <Text>Loading...</Text>;

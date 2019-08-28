@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Text, SectionList, TouchableHighlight} from 'react-native';
+import {View, Text} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
+import PropTypes from 'prop-types';
 
 const SingleSession = ({item, faveIds}) => {
   return (
@@ -15,6 +16,17 @@ const SingleSession = ({item, faveIds}) => {
       </View>
     </View>
   );
+};
+
+SingleSession.PropTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    startTime: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    startTime: PropTypes.string.isRequired,
+  }),
+  faveIds: PropTypes.array.isRequired,
 };
 
 export default SingleSession;

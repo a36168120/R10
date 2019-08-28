@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import Session from './Session';
 import styles from './styles';
 import FavesContext from '../../context/FavesContext';
+import PropTypes from 'prop-types';
 
 class SessionContainer extends Component {
   static navigationOptions = {
@@ -29,5 +30,9 @@ class SessionContainer extends Component {
     );
   }
 }
+
+SessionContainer.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
 
 export default SessionContainer;

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, Animated, Easing, TouchableOpacity} from 'react-native';
 import styles from './styles';
+import PropTypes from 'prop-types';
 
 class Conducts extends Component {
   constructor(props) {
@@ -76,4 +77,11 @@ class Conducts extends Component {
   }
 }
 
+Conducts.PropTypes = {
+  conduct: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }),
+};
 export default Conducts;

@@ -5,6 +5,7 @@ import moment from 'moment';
 import SingleSession from '../../componets/SingleSession';
 import {formatSessionData} from '../../lib/helper';
 import styles from './styles';
+import PropTypes from 'prop-types';
 
 const ListSection = ({session, navigation, faveIds}) => {
   const newData = formatSessionData(session);
@@ -30,6 +31,12 @@ const ListSection = ({session, navigation, faveIds}) => {
       />
     </View>
   );
+};
+
+ListSection.PropTypes = {
+  session: PropTypes.array.isRequired,
+  navigation: PropTypes.object.isRequired,
+  faveIds: PropTypes.array.isRequired,
 };
 
 export default withNavigation(ListSection);

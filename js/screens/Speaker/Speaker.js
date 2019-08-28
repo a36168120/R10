@@ -11,6 +11,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import styles from './styles';
 import {SafeAreaView} from 'react-navigation';
 import {withNavigation} from 'react-navigation';
+import PropTypes from 'prop-types';
 
 const Speaker = ({item, navigation}) => {
   return (
@@ -49,6 +50,17 @@ const Speaker = ({item, navigation}) => {
       </View>
     </SafeAreaView>
   );
+};
+
+Speaker.PropTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    bio: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+  }),
+  navigation: PropTypes.func.isRequired,
 };
 
 export default withNavigation(Speaker);

@@ -1,11 +1,14 @@
 import React from 'react';
-import {View, Text, SectionList} from 'react-native';
-import {formatSessionData} from '../../lib/helper';
 import ListSection from '../../componets/ListSection';
-import styles from './styles';
+import PropTypes from 'prop-types';
 
 const Faves = ({faves, faveIds}) => {
   return <ListSection session={faves} faveIds={faveIds} />;
+};
+
+Faves.PropTypes = {
+  faves: PropTypes.array.isRequired,
+  faveIds: PropTypes.array.isRequired,
 };
 
 export default Faves;
